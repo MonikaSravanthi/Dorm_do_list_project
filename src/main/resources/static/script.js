@@ -55,7 +55,7 @@ async function authFetch(url, options = {}) {
 const role =   document.querySelector(".role-status");
 // /////////////////////////////
 async function getUsers(){
-    const allUsers = await authFetch("http://localhost:8080/api/users");
+    const allUsers = await authFetch("https://dorm-do-list-project.onrender.com/api/users");
     return  await allUsers.json();
 }
 getUsers().then(users=> {
@@ -121,13 +121,13 @@ profileInput.addEventListener("change",async function(e){
        formData.append("image", file);
 
        console.log(formData);
-         await authFetch("http://localhost:8080/api/user/file", {
+         await authFetch("https://dorm-do-list-project.onrender.com/api/user/file", {
            method: "POST",
            body: formData
        });
 
    }
-   const user = await authFetch("http://localhost:8080/api/users/me");
+   const user = await authFetch("https://dorm-do-list-project.onrender.com/api/users/me");
 
     const result =await user.json();
     console.log(result);
@@ -164,7 +164,7 @@ overlay.addEventListener("click", hideModel);
 ///////////////////user container////////////////////////
 
  async function getPendingTasks(){
-    const allTasks =  await authFetch("http://localhost:8080/api/user-tasks");
+    const allTasks =  await authFetch("https://dorm-do-list-project.onrender.com/api/user-tasks");
       return await allTasks.json();
 
 }
@@ -207,7 +207,7 @@ getPendingTasks().then(r => r.forEach((task) => {
 
 }))
 async function getProfile(){
-    const user = await authFetch("http://localhost:8080/api/users/me");
+    const user = await authFetch("https://dorm-do-list-project.onrender.com/api/users/me");
 
     return await user.json();
 
@@ -229,7 +229,7 @@ userTaskContainer.addEventListener('click',async function(e) {
         const completedTaskId = e.target.closest(".row").dataset.pendingTaskId;
 
 
-        const statusResponse = await authFetch(`http://localhost:8080/api/update-status/${completedTaskId}`, {
+        const statusResponse = await authFetch(`https://dorm-do-list-project.onrender.com/api/update-status/${completedTaskId}`, {
             method: "PATCH",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
@@ -238,7 +238,7 @@ userTaskContainer.addEventListener('click',async function(e) {
         });
         console.log(statusResponse);
         // get the updated task
-        const response = await authFetch(`http://localhost:8080/api/task/${completedTaskId}`);
+        const response = await authFetch(`https://dorm-do-list-project.onrender.com/api/task/${completedTaskId}`);
         const userTask = await response.json();
         console.log(userTask);
         const updateCompletedContainer = `
@@ -278,7 +278,7 @@ userTaskContainer.addEventListener('click',async function(e) {
 // displaying all assigned tasks in admin page
 
 async function showAllAssignedTasks() {
-  const getTasks = await authFetch("http://localhost:8080/api/tasks")
+  const getTasks = await authFetch("https://dorm-do-list-project.onrender.com/api/tasks")
   const response = await getTasks.json();
   return response;
 
@@ -435,7 +435,7 @@ console.log(target)
         console.log(taskId)
 
         async function getOldTask() {
-            const existingTask = await authFetch(`http://localhost:8080/api/task/${taskId}`);
+            const existingTask = await authFetch(`https://dorm-do-list-project.onrender.com/api/task/${taskId}`);
 
             return await existingTask.json();
         }
@@ -481,7 +481,7 @@ console.log(target)
             console.log("updated task:", updatedTask);
 
 
-            const response = await authFetch(`http://localhost:8080/api/tasks/${taskId}`, {
+            const response = await authFetch(`https://dorm-do-list-project.onrender.com/api/tasks/${taskId}`, {
                 method: "PATCH",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(updatedTask),
@@ -500,7 +500,7 @@ console.log(target)
         const taskId = oldTaskContainer.dataset.pendingTaskId;
         console.log(taskId)
 
-       const deleteTask = await authFetch(`http://localhost:8080/api/tasks/${taskId}`, {
+       const deleteTask = await authFetch(`https://dorm-do-list-project.onrender.com/api/tasks/${taskId}`, {
             method: "DELETE",
 
         });
