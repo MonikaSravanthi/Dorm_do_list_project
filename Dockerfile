@@ -1,9 +1,8 @@
-<<<<<<< HEAD
-# Stage 1: Build
+
 FROM sourcemation/jdk-21 AS build
 WORKDIR /app
 
-# Copy Maven wrapper and source
+
 COPY pom.xml .
 COPY src src
 COPY mvnw .
@@ -12,7 +11,7 @@ COPY .mvn .mvn
 RUN chmod +x ./mvnw
 RUN ./mvnw clean package -DskipTests
 
-# Stage 2: Runtime
+
 FROM sourcemation/jdk-21
 WORKDIR /app
 VOLUME /tmp
@@ -20,27 +19,4 @@ VOLUME /tmp
 COPY --from=build /app/target/*.jar app.jar
 
 EXPOSE 8080
-=======
-# Stage 1: Build
-FROM sourcemation/jdk-21 AS build
-WORKDIR /app
-
-# Copy Maven wrapper and source
-COPY pom.xml .
-COPY src src
-COPY mvnw .
-COPY .mvn .mvn
-
-RUN chmod +x ./mvnw
-RUN ./mvnw clean package -DskipTests
-
-# Stage 2: Runtime
-FROM sourcemation/jdk-21
-WORKDIR /app
-VOLUME /tmp
-
-COPY --from=build /app/target/*.jar app.jar
-
-EXPOSE 8080
->>>>>>> 2281f114d0fdf6f7c8923f963e175005f4332dc7
 ENTRYPOINT ["java","-jar","app.jar"]
