@@ -15,6 +15,7 @@ public class Users {
     private Integer id;
 
     @Column(name="username")
+    @Column(unique = true)
     private String username;
 
     @Column(name="first_name")
