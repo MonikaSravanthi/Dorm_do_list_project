@@ -9,7 +9,7 @@ COPY mvnw .
 COPY .mvn .mvn
 
 RUN chmod +x ./mvnw
-RUN ./mvnw clean package -DskipTests
+RUN bash ./mvnw clean package -DskipTests
 
 
 FROM sourcemation/jdk-21
