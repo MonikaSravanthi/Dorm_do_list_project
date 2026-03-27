@@ -28,4 +28,7 @@ document.getElementById("loginForm").addEventListener("submit", async function (
     if (data.roles.includes("ROLE_ADMIN")) {
         window.location.replace("/index.html");
     }
+       if (data.roles.includes("ROLE_USER")) {
+        window.location.replace("/index.html");
+    }
 });
