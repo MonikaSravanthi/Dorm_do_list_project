@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dorm</title>
+    <link href="style.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+
+<body>
+<div class="navbar">
+    <div class="app-name">
+        <h2>D<div></div>rmD<div></div>List</h2>
+    </div>
+    <div class="role">
+        <div class="role-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-6">
+                <path d="M10 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM3.465 14.493a1.23 1.23 0 0 0 .41 1.412A9.957 9.957 0 0 0 10 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 0 0-13.074.003Z" />
+            </svg>
+        </div>
+
+        <img  alt = "profile-img" class="profile-pic" src=""/>
+        <input type="file" id="profile-input" style="display:none">
+
+    </div>
+</div>
+
+
+<div class="container">
+
+    <section class="user-container hidden ">
+        <section class="my-pending-tasks">
+            <div class="my-pending-tasks__title">
+                <h2>My tasks</h2>
+            </div>
+
+            <div class="my-pending-tasks-container">
+                <div class="my-pending-tasks__labels">
+                    <div class="my-pending-tasks__header"></div>
+                    <div class="my-pending-tasks__header">Description</div>
+                    <div class="my-pending-tasks__header">Due</div>
+
+                </div>
+
+                <div class="my-pending-tasks__all-rows">
+                    <!--            <div class="row">-->
+                    <!--              <div class= "my-pending-tasks__data">-->
+                    <!--              <input type="checkbox" id="completedtask" name="completedtask" />-->
+                    <!--              </div>-->
+                    <!--              <div class="my-pending-tasks__data">Task 1</div>-->
+                    <!--              <div class="my-pending-tasks__data">Tomorrow</div>-->
+
+                    <!--            </div>-->
+                </div>
+            </div>
+        </section>
+
+        <section class="my-completed-tasks">
+            <div class="my-completed-tasks__title">
+                <h2>Completed tasks</h2>
+            </div>
+
+            <div class="my-completed-tasks__container">
+                <div class="my-completed-tasks__labels">
+                    <div class="my-completed-tasks__header">Description</div>
+                    <div class="my-completed-tasks__header">Due</div>
+
+                </div>
+
+                <div class="my-completed-tasks__all-rows">
+                    <!--            <div class="row">-->
+                    <!--              <div class="my-completed-tasks__data">Task 1</div>-->
+                    <!--              <div class="my-completed-tasks__data">Tomorrow</div>-->
+
+                    <!--          </div>-->
+                </div>
+            </div>
+        </section>
+
+
+    </section>
+    <!--      <div class="complaint-board">-->
+    <!--        <h1>Complaint Board</h1>-->
+    <!--        <div class="complaint-board__complaints">-->
+    <!--          <div class="dot"></div> complaint-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <div class="overlay hidden"></div>
+    <!-- container -->
+
+
+    <!-- script link -->
+    <script src="script.js"></script>
+</div>
+</body>
+</html>
