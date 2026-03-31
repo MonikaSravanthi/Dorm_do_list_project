@@ -34,6 +34,16 @@ public class JwtFilter extends OncePerRequestFilter {
         String autenticatedHeader = request.getHeader("Authorization");
         String token = null;
         String username = null;
+        String path = request.getServletPath();
+
+         if (path.matches(".*\\.(html|css|js|png|jpg|jpeg|gif)$") ||
+                path.startsWith("/images/") ||
+                path.startsWith("/api/login") ||
+                path.startsWith("/registration")) {
+            filterChain.doFilter(request, response);
+            return;
+        }
+
 
 
         if (autenticatedHeader != null && autenticatedHeader.startsWith("Bearer ")) {
