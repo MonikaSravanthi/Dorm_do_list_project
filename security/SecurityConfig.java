@@ -43,12 +43,13 @@ public class SecurityConfig {
 
         http
                 .csrf(csrf -> csrf.disable())
-                .formLogin(form -> form.disable())   // ← disables default /login
+                .formLogin(form -> form.disable())   
                 .httpBasic(basic -> basic.disable());
 
         http.authorizeHttpRequests(configurer -> configurer
                 .requestMatchers(
                         "/index.html",
+                        "/dashboard.html",
                         "/login.html",
                         "/loginScript.js",
                         "/signup.html",
