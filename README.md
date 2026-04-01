@@ -1,5 +1,5 @@
 # Dorm_do_list_project
-- In a shared house, chores are often ignored. DormDoList helps roommates overcome this problem by enabling the admin to assign tasks to every roommate, including themselves.
+In a shared house, chores are often ignored. DormDoList helps roommates overcome this problem by enabling the admin to assign tasks to every roommate, including themselves.
 
 ## Built With
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
@@ -11,6 +11,14 @@
 
 
 ## Features
+##### Email Notifications
+- Alerts users when new tasks are assigned.
+##### Secure Profile Picture Upload
+- Allows users to upload profile pictures securely.
+##### JWT Authentication
+-	Offers secure login and session management.
+
+  
 
 
 ## Screenshots
